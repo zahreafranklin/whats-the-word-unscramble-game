@@ -192,8 +192,6 @@ grid-row: 1;
 .the-end{
     grid-column:1/4;
     grid-row: 1;
-    width: 85px;
-    height: 85px;
 }
 
 .the-end-text{
