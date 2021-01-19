@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's The Word Unscramble Game </title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src='https://vuejs.org/js/vue.min.js'></script> 
+
+</head>
+<body>
+    
+    <div id="main">
+        <div class="title animate__animated animate__fadeInDown"> WHAT'S THE WORD GAME </div>
+        
+        <div class ="box" v-if="!gameContinue">
+            <img src="images/trophy.png" class="the-end">
+            <h1 class="the-end-text"> CONGRATS! You unscrambled all the words! YAY! 🎉 </h1>
+        </div>
+        <div class="box animate__animated animate__fadeInUp" v-if="gameContinue">
+            <p class="tricky">UNSCRAMBLE THE LETTERS : {{ trickyName }}</p>
+       
+            <input type="text" class="blank">
+            <input @click="checkAnswer" type="submit" class="guess" value="GUESS">
+
+            <span class="notifications noti-one animate__animated animate__shake"> Please enter an answer</span>
+            <span class="notifications noti-two animate__animated animate__shake"> Incorrect! Try again</span>
+            <span class="notifications noti-three animate__animated animate__bounceIn">CORRECT! </span>
+           
+            <img :src ="newImage" class="hint-img">
+            <input @click="hint" type="submit" class="hint" value="HINT?">
+      
+        </div>
+    </div>
+<script>
+    var app = new Vue({
+    el: '#main',
+    data: {
+        newWord : "", 
+            newImage : "",
+            trickyName : "",
+            gameContinue : true,
+        allWords: [
+                    {title : "WINTER", img : "images/winter.png"},
+                    {title : "GENIE", img : "images/genie.png"},
+                    {title : "YACHT", img : "images/yacth.png"},
+                    {title : "SUSHI", img : "images/sushi.png"},
+                    {title : "FOUNTAIN", img : "images/fountain.png"},
+                    {title : "MUSHROOM", img : "images/mushroom.png"},
+                    {title : "SKATEBOARD",  img :src = "images/skateboard.png"},
+                    {title : "HIPPOPOTAMUS", img : "images/hippo.png"}
+                   ]
+            
+         },
+methods :
+        {
+            getRandomWord(){
+             if(this.allWords.length > 0) //this function will not work once all words are solved
+            {
+                let n = Math.floor(Math.random()* this.allWords.length); //random number given selects a word at array index
+            
+           this.newWord = this.allWords[n].title; //randomly selected words
+           this.newImage = this.allWords[n].img; //randomly selected image
+
+            this.allWords.splice(n,1); //removing the selected word once solved
+            this.trickyName = this.scramble(this.newWord.split("")); //splitting the selected word into an array of letters
+        }
+            else {
+                this.gameContinue = false; //stop the game when all words are solved.
+                }
+            },
+            scramble(arr){
+                let trick = arr.sort(); //sort the letters
+                    trick = trick.reverse(); //reverse the letter positions
+                    return trick.join(""); //returning the joined word again
+            },
+            hint() {
+                this.notification('hint-img');
+            },
+
+            checkAnswer(){
+                let answer = document.getElementsByClassName('blank')[0].value;
+                
+                if(!answer) { //no answer inserted
+                    this.notification('noti-one');
+                }
+                else if(answer.length !=0 & answer.toUpperCase() != this.newWord.toUpperCase())
+            {
+                this.notification('noti-two');
+            }
+            else { //if the answer is correct
+                this.notification('noti-three');
+                
+                let replay = () =>
+                    {
+                        document.getElementsByClassName('blank')[0].value = ""; //clears input field
+                        this.getRandomWord();
+                    }
+                    setTimeout(function(){
+                        replay();
+                    });
+        
+            } //end else
+          
+        },
+            notification(element) {  //hiding and showing the right element
+                document.getElementsByClassName(element)[0].style.display = "block";
+                setTimeout(function(){
+                    document.getElementsByClassName(element)[0].style.display = "none";
+                },3500);
+            }
+        },
+
+created(){
+    this.getRandomWord();
+} 
+});
+</script>
+
+</body>
+</html>
