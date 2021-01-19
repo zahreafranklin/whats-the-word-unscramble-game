@@ -1,7 +1,7 @@
 # What's The Word Unscramble Game
  
  
- **Check out the website here** : https://bit.ly/39MdYj0
+ **PLAY WHAT'S THE WORD HERE!!** : https://bit.ly/39MdYj0
  
  # What is 'What's The Word'?
  What's The Word is a game where the aim is to unscramble the letters to solve the words. 
