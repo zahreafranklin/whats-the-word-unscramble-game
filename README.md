@@ -14,18 +14,20 @@ What's The Word is an interactive game that asks the player to unscramble the le
 JavaScript, CSS, HTML, Vue.js
 
 # Images of App:
-## Homepage or Default page
+
+**Homepage or Default page:**
 ![Homepage or Default page](https://raw.githubusercontent.com/zahreafranklin/whats-the-word-unscramble-game/main/word-unscramble/images/screenshots/default-page.png)
-## Displaying hint image for scrambled letters
+
+**Displaying hint image for scrambled letters:**
 ![Displaying hint image for scrambled letters](https://raw.githubusercontent.com/zahreafranklin/whats-the-word-unscramble-game/main/word-unscramble/images/screenshots/hint-shown.png)
 
-## Alerting user of empty field
+**Alerting user of empty field:**
 ![Alerting user of empty field](https://raw.githubusercontent.com/zahreafranklin/whats-the-word-unscramble-game/main/word-unscramble/images/screenshots/empty-field-prompt.png)
 
-## Alerting user of wrong answer
+**Alerting user of wrong answer:**
 ![Alerting user of wrong answer](https://raw.githubusercontent.com/zahreafranklin/whats-the-word-unscramble-game/main/word-unscramble/images/screenshots/wrong-answer-prompt.png)
 
-## Alerting user of correct answer
+**Alerting user of correct answer:**
 ![Alerting user of correct answer](https://raw.githubusercontent.com/zahreafranklin/whats-the-word-unscramble-game/main/word-unscramble/images/screenshots/correct-answer-prompt.png)
 
 ## Congrats screen
