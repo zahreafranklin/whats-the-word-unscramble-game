@@ -37,22 +37,35 @@ body {
     animation-delay: 1s;
 }
 
-.box{
+.box {
     grid-column: 1/4;
     margin: 100px;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    font-family:'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     justify-content: center;
     align-items: center;
     color: #212331;
     text-align: center;
     background: rgba(255, 255, 255, 0.11);
-    box-shadow: 0 8px 32px 0 rgba(83, 83, 83, 0.22);
+    box-shadow: 0 8px 32px 0 rgb(83 83 83 / 22%);
     backdrop-filter: blur( 2.0px );
     -webkit-backdrop-filter: blur( 2.0px );
     border-radius: 10px;
     animation-delay: 1s;
+}
+
+
+@media only screen and (max-width: 768px) {
+.box {
+    width: auto;
+    height: auto;
+    min-width: 300px;
+    max-height: 365px;
+    align-items: center;
+    margin: auto;
+    padding: 40px;
+    justify-content: center;
+}
 }
 
 .tricky{
@@ -188,6 +201,17 @@ grid-row: 1;
     display:none;
     transition: all .3s ease;
 }
+
+@media only screen and (max-width: 768px) {
+.hint-img {
+    width: 60px;
+    height: 60px;
+    margin-top: auto;
+    margin: 0 auto;
+    padding-bottom: 8px;
+    }
+}
+
 
 .the-end{
     grid-column:1/4;
