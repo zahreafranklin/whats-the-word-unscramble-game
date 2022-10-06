@@ -122,42 +122,41 @@ input.guess:active {
     box-shadow: 0px 0px 0px 0px #000;
     }
 
-.notifications {
-    width: 80%;
-    justify-self: center;
-    border-radius: 20px;
-    padding: 5px;
-    font-size:18px;
-    color: white;
-    display: none;
-    transition-duration: 0.5s;
-    backdrop-filter: blur( 2.0px );
-    -webkit-backdrop-filter: blur( 2.0px );
-    box-shadow: 
-      12px 12px 16px 0 rgba(0, 0, 0, 0.25),
-      -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-}    
-
-.noti-one{
-background:rgba(255, 247, 142, 0.966);
-grid-column: 1;
-color: #3a3a3a;
-grid-row: 1;
-}
-
-.noti-two {
-    background: rgba(245, 76, 76, 0.973);
-    grid-column: 1;
-    grid-row: 2;
+    .notifications {
+        width: 80%;
+        justify-self: center;
+        border-radius: 20px;
+        padding: 5px;
+        font-size:18px;
+        color: white;
+        display: none;
+        transition-duration: 0.5s;
+        backdrop-filter: blur( 2.0px );
+        -webkit-backdrop-filter: blur( 2.0px );
+        box-shadow: 
+          12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+          -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+    }    
     
-}
-
-.noti-three {
-    background: rgba(101, 228, 101, 0.966);
+    .noti-one{
+    background:rgba(255, 247, 142, 0.966);
     grid-column: 1;
-    grid-row: 3;
-}
-
+    color: #3a3a3a;
+    grid-row: 1;
+    }
+    
+    .noti-two {
+        background: rgba(245, 76, 76, 0.973);
+        grid-column: 1;
+        grid-row: 2;
+        
+    }
+    
+    .noti-three {
+        background: rgba(101, 228, 101, 0.966);
+        grid-column: 1;
+        grid-row: 3;
+    }
 
 .hint {
     grid-column: 3;
@@ -188,6 +187,7 @@ grid-row: 1;
 
 .hint:active{
     transform: scale(0.9);
+    float
     box-shadow: 0px 0px 0px 0px #000;
 }
 
@@ -201,17 +201,6 @@ grid-row: 1;
     display:none;
     transition: all .3s ease;
 }
-
-@media only screen and (max-width: 768px) {
-.hint-img {
-    width: 60px;
-    height: 60px;
-    margin-top: auto;
-    margin: 0 auto;
-    padding-bottom: 8px;
-    }
-}
-
 
 .the-end{
     grid-column:1/4;
